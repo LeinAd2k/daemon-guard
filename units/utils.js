@@ -10,7 +10,7 @@ const fs = require("fs");
 module.exports = {
   ensureUserDataDir: function () {
     var userDataDir = process.env.APPDATA || (process.platform === "darwin" ? process.env.HOME + "/Library/Application Support" : process.env.HOME + "/.local/share");
-    userDataDir = path.join(userDataDir, "ccxNodeGuard");
+    userDataDir = path.join(userDataDir, "NashCash-Guard");
 
     if (!fs.existsSync(userDataDir)) {
       shell.mkdir('-p', userDataDir);
@@ -39,9 +39,9 @@ module.exports = {
   },
   getNodeExecutableName: function () {
     if (process.platform === "win32") {
-      return 'conceald.exe';
+      return 'NashCashd.exe';
     } else {
-      return 'conceald';
+      return 'NashCashd';
     }
   },
   getGuardianExecutableName: function () {

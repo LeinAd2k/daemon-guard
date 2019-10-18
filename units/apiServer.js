@@ -23,7 +23,7 @@ module.exports = {
     });
 
     app.get("/getDaemonLog", (req, res) => {
-      readLastLines.read(path.join(nodeDirectory, 'conceald.log'), 500).then((lines) => {
+      readLastLines.read(path.join(nodeDirectory, 'NashCashd.log'), 500).then((lines) => {
         res.send(lines);
       });
     });

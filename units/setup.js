@@ -14,7 +14,7 @@ module.exports = {
       {
         type: 'input',
         name: 'nodePath',
-        message: 'Please input the path to the "conceald" executable (if you do not know what to put in, leave it empty)',
+        message: 'Please input the path to the "NashCashd" executable (if you do not know what to put in, leave it empty)',
         default: oPath.get(configOpts, 'node.path', '')
       },
       {

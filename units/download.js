@@ -14,8 +14,8 @@ const path = require("path");
 const fs = require("fs");
 
 // a message if you are on the wrong OS and there is no precompiled binaries for that OS.
-const wrongLinuxOSMsg = "Only Ubuntu 16.04 and 18.04 have precompiled binaries, on other linux systems you need to build the daemon yourself. Reffer to: https://github.com/ConcealNetwork/conceal-core";
-const wrongOSMsg = "This operating system has no precompiled binaries you need to build the daemon yourself. Reffer to: https://github.com/ConcealNetwork/conceal-core";
+const wrongLinuxOSMsg = "Only Ubuntu 16.04 and 18.04 have precompiled binaries, on other linux systems you need to build the daemon yourself. Reffer to: https://github.com/Nash-Cash/NashCash";
+const wrongOSMsg = "This operating system has no precompiled binaries you need to build the daemon yourself. Reffer to: https://github.com/Nash-Cash/NashCash";
 
 // Define a function to filter releases.
 function filterRelease(release) {
@@ -84,12 +84,12 @@ module.exports = {
     // Define a function to filter assets.
     var filterAssetNode = function (asset) {
       if (process.platform === "win32") {
-        return asset.name.indexOf('win64') >= 0;
+        return asset.name.indexOf('Windows-64') >= 0;
       } else if (process.platform === "linux") {
         if ((linuxOSInfo.id == "ubuntu") && ((linuxOSInfo.version_id == "16.04") || (linuxOSInfo.version_id == "16.10"))) {
-          return asset.name.indexOf('ubuntu-1604') >= 0;
+          return asset.name.indexOf('Linux-64') >= 0;
         } else if ((linuxOSInfo.id == "ubuntu") && ((linuxOSInfo.version_id == "18.04") || (linuxOSInfo.version_id == "18.10"))) {
-          return asset.name.indexOf('ubuntu-1804') >= 0;
+          return asset.name.indexOf('Linux-64') >= 0;
         } else {
           return false;
         }
@@ -100,7 +100,7 @@ module.exports = {
       }
     };
 
-    downloadRelease('ConcealNetwork', 'conceal-core', finalTempDir, filterRelease, filterAssetNode, true)
+    downloadRelease('Nash-Cash', 'NashCash', finalTempDir, filterRelease, filterAssetNode, true)
       .then(function () {
         fs.readdir(finalTempDir, function (err, items) {
           if (items.length > 0) {
@@ -135,7 +135,7 @@ module.exports = {
         callback(err.message);
       });
   },
-  downloadLatestGuardian: function (callback) {
+   downloadLatestGuardian: function (callback) {
     var finalTempDir = path.join(tempDir, utils.ensureNodeUniqueId());
 
     if (!fs.existsSync(tempDir)) {
@@ -158,8 +158,7 @@ module.exports = {
         return false;
       }
     };
-
-    downloadRelease('ConcealNetwork', 'conceal-guardian', finalTempDir, filterRelease, filterAssetGuardian, true)
+     downloadRelease('Nash-Cash', 'daemon-guard', finalTempDir, filterRelease, filterAssetGuardian, true)
       .then(function () {
         fs.readdir(finalTempDir, function (err, items) {
           if (items.length > 0) {
