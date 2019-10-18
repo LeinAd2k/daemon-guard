@@ -2,7 +2,7 @@
 
 ## About
 
-Conceal Node Guardian is a process that monitors the `conceald` daemon. It is catching daemon errors, monitors the block count and, in case of an error, it restarts the daemon and notifies on Discord via web hook, sends an e-mail, or both.
+Conceal Node Guardian is a process that monitors the `NashCashd` daemon. It is catching daemon errors, monitors the block count and, in case of an error, it restarts the daemon and notifies on Discord via web hook, sends an e-mail, or both.
 
 It also has an ability to connect to a pool with other nodes for the purpose of infrastructure monitoring or running a remote node with fee listing.
 
@@ -53,12 +53,12 @@ You can use [sample configuration](config.json.sample) and modify it for your ne
 **Description of configuration options:**
 
 * `node`
-  * `args`: Additional `conceald` daemon arguments.
-  * `path`: Absolute path to `conceald` binary. If not specified, it will try to use `conceald` from project root folder.
-  * `port`: The port on which `conceald` is running (same as `--rpc-bind-port` in `conceald`).
+  * `args`: Additional `NashCashd` daemon arguments.
+  * `path`: Absolute path to `NashCashd` binary. If not specified, it will try to use `NashCashd` from project root folder.
+  * `port`: The port on which `NashCashd` is running (same as `--rpc-bind-port` in `NashCashd`).
   * `name`: Name of the node. If omitted it uses the hostname.
   * `feeAddr`: The CCX address on which the transaction fee will be sent if running a remote node.
-  * `bindAddr`: Bind RPC server on this address (same as `--rpc-bind-ip` in `conceald`).
+  * `bindAddr`: Bind RPC server on this address (same as `--rpc-bind-ip` in `NashCashd`).
   * `autoUpdate`: `true` or `false`. Depending if you want your Guardian to autoupdate the daemon or not.
 * `error`
   * `notify`
@@ -109,7 +109,7 @@ $ node index.js
          "--rpc-bind-port",
          "16000"
       ],
-      "path":"C:\\Wallets\\Conceal-CLI\\conceald.exe",
+      "path":"C:\\Wallets\\Conceal-CLI\\NashCashd.exe",
       "port":16000,
       "name":"TestNode",
       "bindAddr":"0.0.0.0",
@@ -165,7 +165,7 @@ The explanation of config options:
 * **node**
   * args: The arguments that get appended to the monitored process.
   * path: The path of the process. If omited it uses the same path where the guardian is located
-  * port: The port on which conceald is running
+  * port: The port on which NashCashd is running
   * name: Name of the node. If omited it uses the hostname.
   * feeAddr: The CCX address on which the transaction fee will be sent in case of remote node.
   * bindAddr: The address on which you listen. 127.0.0.1 for localhost only. 0.0.0.0 for outside accesible node.

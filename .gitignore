@@ -1,7 +1,7 @@
 /node_modules
-/conceald.exe
-/conceald.log
-/conceald
+/NashCashd.exe
+/NashCashd.log
+/NashCashd
 /package-lock.json
 /config.json
 

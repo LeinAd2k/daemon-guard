@@ -50,8 +50,8 @@ try {
 if (cmdOptions.help) {
   const sections = [
     {
-      header: 'Conceal Node Guardian',
-      content: 'This is a guardian app for the conceal node daemon. Handles restarts, sends notifications, registers to pool...'
+      header: 'NashCash Node Guardian',
+      content: 'This is a guardian app for the NashCash daemon. Handles restarts, sends notifications, registers to pool...'
     },
     {
       header: 'Options',
@@ -126,7 +126,7 @@ if (cmdOptions.help) {
   const usage = commandLineUsage(sections);
   console.log(usage);
 } else if (cmdOptions.version) {
-  console.log(vsprintf('\nConceal node guardian version %s\n', [pjson.version]));
+  console.log(vsprintf('\nCNashCash node guardian version %s\n', [pjson.version]));
 } else {
   const rootPath = process.cwd();
   const configFileName = cmdOptions.config || path.join(rootPath, "config.json");

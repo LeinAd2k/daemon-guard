@@ -1,0 +1,31 @@
+{
+  "node": {
+    "args": [],
+    "port": 24888,
+    "rfcTimeout": 10,
+    "bindAddr": "0.0.0.0"
+  },
+  "restart": {
+    "terminateTimeout": 5,
+    "errorForgetTime": 600,
+    "maxCloseErrors": 4,
+    "maxBlockTime": 1800,
+    "maxInitTime": 900
+  },
+  "api": {
+    "port": 8080
+  },
+  "pool": {
+    "notify": {
+      "url": "http://85.214.241.85:3000/pool/update",
+      "interval": 60
+    }
+  },
+  "error": {
+    "notify": {
+      "discord": {
+        "url": "https://discordapp.com/api/webhooks/624265254540410882/Yh7EejSilZmx5wA5GBzBHmnYWfSDAwkLy_4Xlvu4tBhg3mOZ67TzGTIN1o5aGceT6jIP"
+      }
+    }
+  }
+}
