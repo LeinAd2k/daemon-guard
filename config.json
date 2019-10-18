@@ -1,0 +1,55 @@
+{
+  "node": {
+    "args": [],
+    "port": 24888,
+    "rfcTimeout": 10,
+    "bindAddr": "0.0.0.0",
+    "name": "Name the Node",
+    "path": "path to NashCashd",
+    "autoUpdate": true,
+    "feeAddr": "beginns with NaCa"
+  },
+  "restart": {
+    "terminateTimeout": 5,
+    "errorForgetTime": 600,
+    "maxCloseErrors": 3,
+    "maxBlockTime": 1800,
+    "maxInitTime": 900
+  },
+  "api": {
+    "port": 8080
+  },
+  "pool": {
+    "notify": {
+      "url": "http://85.214.241.85:3000/pool/update",
+      "interval": 30
+    }
+  },
+  "error": {
+    "notify": {
+      "discord": {
+        "url": "discord hook"
+      },
+      "email": {
+        "smtp": {
+          "host": "smtphost",
+          "port": "25",
+          "secure": true
+        },
+        "auth": {
+          "username": "user",
+          "password": "password"
+        },
+        "message": {
+          "from": "from",
+          "to": "to",
+          "subject": "subject"
+        }
+      }
+    }
+  },
+  "url": {
+    "host": "yourhost",
+    "port": "8080"
+  }
+}
