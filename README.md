@@ -85,7 +85,7 @@ You can use [sample configuration](config.json.sample) and modify it for your ne
   * `port`: The port on which the HTTP API server listens requests. If not specified the Guardian will not listen for incoming requests.
 * `pool`
   * `notify`
-    * `url`: The URL of the Conceal Guardian Pool. The Guardian is sending its data to pool for public listing.
+    * `url`: The URL of the  Pool. The Guardian is sending its data to pool for public listing.
     * `interval`: The interval in seconds in which the data is being sent to pool.
 
 ## Running
