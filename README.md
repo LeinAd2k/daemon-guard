@@ -239,17 +239,22 @@ $ sudo systemctl enable ccx-guardian.service
 You can control system service with following commands:
 
 ```bash
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable ccx-guardian.service
+
+and this for start stop reload etc ...
+
 # start
-$ sudo systemctl start ccx-guardian
+$ sudo systemctl start daemon-guard
 
 # stop
-$ sudo systemctl stop ccx-guardian
+$ sudo systemctl stop daemon-guard
 
 # status
-$ sudo systemctl status ccx-guardian
+$ sudo systemctl status daemon-guard
 
 # print log
-$ journalctl -e -u ccx-guardian.service
+$ journalctl -e -u daemon-guard.service
 
 # reload configuration
 $ sudo systemctl daemon-reload
