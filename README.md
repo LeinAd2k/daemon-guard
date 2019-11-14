@@ -107,13 +107,15 @@ $ node index.js
          "--rpc-bind-ip",
          "127.0.0.1",
          "--rpc-bind-port",
-         "16000"
+         "16000", 
+         "--enable-cors=*",
+         "--enable-blockexplorer"],
       ],
       "path":"C:\\Wallets\\Conceal-CLI\\NashCashd.exe",
       "port":16000,
       "name":"TestNode",
       "bindAddr":"0.0.0.0",
-      "feeAddr":"your fee CCX address"
+      "feeAddr":"your fee NaCa address"
    },
    "error":{
       "notify":{
@@ -233,7 +235,7 @@ To enable the service and run it on startup, run:
 
 ```bash
 $ sudo systemctl daemon-reload
-$ sudo systemctl enable ccx-guardian.service
+$ sudo systemctl enable daemon-guard.service
 ```
 
 You can control system service with following commands:
